@@ -1,0 +1,1401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="tela_principal" prefHeight="530.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane fx:id="main_window" prefHeight="530.0" prefWidth="710.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fx:id="menu_bg" fitHeight="266.0" fitWidth="255.0" layoutX="156.0" layoutY="150.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../Fontes/Imagens/cpu.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+            </ImageView>
+            <Button fx:id="minimizar" cancelButton="true" contentDisplay="GRAPHIC_ONLY" layoutX="355.0" layoutY="160.0" mnemonicParsing="false" onAction="#Minimizar_Janela" onMouseEntered="#Entrou_Minimizar" onMouseExited="#Saiu_Minimizar" prefHeight="32.0" prefWidth="32.0" text="-">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="fechar" contentDisplay="GRAPHIC_ONLY" layoutX="355.0" layoutY="202.0" mnemonicParsing="false" onAction="#Fechar_Janela" onMouseEntered="#Entrou_Fechar" onMouseExited="#Saiu_Fechar" prefHeight="32.0" prefWidth="32.0" text="X">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="power" contentDisplay="GRAPHIC_ONLY" layoutX="256.0" layoutY="303.0" mnemonicParsing="false" onAction="#Ligar_Desligar" onMouseEntered="#Power_Foco" onMouseExited="#Tirar_Power_Foco" opacity="0.7" prefHeight="40.0" prefWidth="40.0" text="Button">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fx:id="loading" fitHeight="80.0" fitWidth="80.0" layoutX="340.0" layoutY="333.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../Fontes/Imagens/load.gif" />
+               </image>
+            </ImageView>
+            <Button fx:id="add" contentDisplay="GRAPHIC_ONLY" layoutX="120.0" layoutY="475.0" mnemonicParsing="false" onAction="#Adicionar_Recurso" onMouseEntered="#Add_Foco" onMouseExited="#Tirar_Add_Foco" prefHeight="40.0" prefWidth="40.0" text="Button" visible="false">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fx:id="recurso1" fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="15.0" onMouseEntered="#Foco_Recurso_1" onMouseExited="#Tirar_Foco_Recurso_1" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="recurso2" fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="70.0" onMouseEntered="#Foco_Recurso_2" onMouseExited="#Tirar_Foco_Recurso_2" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="recurso3" fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="125.0" onMouseEntered="#Foco_Recurso_3" onMouseExited="#Tirar_Foco_Recurso_3" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="recurso4" fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="180.0" onMouseEntered="#Foco_Recurso_4" onMouseExited="#Tirar_Foco_Recurso_4" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="recurso5" fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="235.0" onMouseEntered="#Foco_Recurso_5" onMouseExited="#Tirar_Foco_Recurso_5" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="recurso6" fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="290.0" onMouseEntered="#Foco_Recurso_6" onMouseExited="#Tirar_Foco_Recurso_6" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="recurso7" fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="345.0" onMouseEntered="#Foco_Recurso_7" onMouseExited="#Tirar_Foco_Recurso_7" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="recurso8" fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="400.0" onMouseEntered="#Foco_Recurso_8" onMouseExited="#Tirar_Foco_Recurso_8" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="recurso9" fitHeight="50.0" fitWidth="50.0" layoutX="80.0" layoutY="15.0" onMouseEntered="#Foco_Recurso_9" onMouseExited="#Tirar_Foco_Recurso_9" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="recurso10" fitHeight="50.0" fitWidth="50.0" layoutX="80.0" layoutY="70.0" onMouseEntered="#Foco_Recurso_10" onMouseExited="#Tirar_Foco_Recurso_10" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="data" contentDisplay="CENTER" layoutX="667.0" layoutY="507.0" prefHeight="17.0" prefWidth="104.0" visible="false">
+               <font>
+                  <Font name="Consolas" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="hora" contentDisplay="CENTER" layoutX="678.0" layoutY="490.0" prefHeight="17.0" prefWidth="151.0" visible="false">
+               <font>
+                  <Font name="Consolas" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="configuracao" contentDisplay="GRAPHIC_ONLY" layoutX="657.0" layoutY="488.0" mnemonicParsing="false" onAction="#Configurar_Intervalo" onMouseEntered="#Entrou_Configuracao" onMouseExited="#Saiu_Configuracao" prefHeight="40.0" prefWidth="88.0" text="Button" visible="false">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="start" contentDisplay="GRAPHIC_ONLY" layoutX="182.0" layoutY="475.0" mnemonicParsing="false" onAction="#Iniciar_Analise" onMouseEntered="#Start_Foco" onMouseExited="#Tirar_Start_Foco" prefHeight="40.0" prefWidth="40.0" text="Button" visible="false">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="som" contentDisplay="GRAPHIC_ONLY" layoutX="620.0" layoutY="490.0" mnemonicParsing="false" onAction="#Configurar_Som" onMouseEntered="#Som_Foco" onMouseExited="#Tirar_Som_Foco" prefHeight="20.0" prefWidth="20.0" text="Button" visible="false">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <TabPane fx:id="gerenciador_main_window" disable="true" layoutY="48.0" prefHeight="425.0" prefWidth="750.0" tabClosingPolicy="UNAVAILABLE" visible="false">
+              <tabs>
+                <Tab fx:id="tab_grafo" text="Grafo">
+                     <content>
+                        <Pane fx:id="grafo_pane" prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fx:id="grafo_recurso1" fitHeight="50.0" fitWidth="50.0" layoutX="70.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="grafo_recurso2" fitHeight="50.0" fitWidth="50.0" layoutX="130.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="grafo_recurso3" fitHeight="50.0" fitWidth="50.0" layoutX="190.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="grafo_recurso4" fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="grafo_recurso5" fitHeight="50.0" fitWidth="50.0" layoutX="310.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="grafo_recurso6" fitHeight="50.0" fitWidth="50.0" layoutX="370.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="grafo_recurso7" fitHeight="50.0" fitWidth="50.0" layoutX="430.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="grafo_recurso8" fitHeight="50.0" fitWidth="50.0" layoutX="490.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="grafo_recurso9" fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="grafo_recurso10" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="grafo_processo1" fitHeight="50.0" fitWidth="50.0" layoutX="70.0" layoutY="20.0" onMouseClicked="#Finalizar_Processo1" onMouseEntered="#Foco_Processo1" onMouseExited="#Tirar_Foco_Processo1" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="grafo_processo2" fitHeight="50.0" fitWidth="50.0" layoutX="130.0" layoutY="20.0" onMouseClicked="#Finalizar_Processo2" onMouseEntered="#Foco_Processo2" onMouseExited="#Tirar_Foco_Processo2" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="grafo_processo3" fitHeight="50.0" fitWidth="50.0" layoutX="190.0" layoutY="20.0" onMouseClicked="#Finalizar_Processo3" onMouseEntered="#Foco_Processo3" onMouseExited="#Tirar_Foco_Processo3" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="grafo_processo4" fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="20.0" onMouseClicked="#Finalizar_Processo4" onMouseEntered="#Foco_Processo4" onMouseExited="#Tirar_Foco_Processo4" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="grafo_processo5" fitHeight="50.0" fitWidth="50.0" layoutX="310.0" layoutY="20.0" onMouseClicked="#Finalizar_Processo5" onMouseEntered="#Foco_Processo5" onMouseExited="#Tirar_Foco_Processo5" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="grafo_processo6" fitHeight="50.0" fitWidth="50.0" layoutX="370.0" layoutY="20.0" onMouseClicked="#Finalizar_Processo6" onMouseEntered="#Foco_Processo6" onMouseExited="#Tirar_Foco_Processo6" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="grafo_processo7" fitHeight="50.0" fitWidth="50.0" layoutX="430.0" layoutY="20.0" onMouseClicked="#Finalizar_Processo7" onMouseEntered="#Foco_Processo7" onMouseExited="#Tirar_Foco_Processo7" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="grafo_processo8" fitHeight="50.0" fitWidth="50.0" layoutX="490.0" layoutY="20.0" onMouseClicked="#Finalizar_Processo8" onMouseEntered="#Foco_Processo8" onMouseExited="#Tirar_Foco_Processo8" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="grafo_processo9" fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="20.0" onMouseClicked="#Finalizar_Processo9" onMouseEntered="#Foco_Processo9" onMouseExited="#Tirar_Foco_Processo9" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="grafo_processo10" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="20.0" onMouseClicked="#Finalizar_Processo10" onMouseEntered="#Foco_Processo10" onMouseExited="#Tirar_Foco_Processo10" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="processo1_recurso1_aresta" fitHeight="120.0" fitWidth="10.0" layoutX="90.0" layoutY="78.0" pickOnBounds="true" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo1_recurso2_aresta" fitHeight="128.0" fitWidth="10.0" layoutX="115.0" layoutY="75.0" pickOnBounds="true" rotate="-25.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta2.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="novo_processo_bt" layoutX="635.0" layoutY="259.0" mnemonicParsing="false" onAction="#Novo_Processo" prefHeight="25.0" prefWidth="97.0" text="Novo Processo">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="finalizar_processo_bt" disable="true" layoutX="520.0" layoutY="259.0" mnemonicParsing="false" onAction="#Finalizar_Processo" prefHeight="25.0" prefWidth="111.0" text="Finalizar Processo" visible="false">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <ImageView fx:id="processo1_recurso3_aresta" fitHeight="165.0" fitWidth="10.0" layoutX="145.0" layoutY="55.0" pickOnBounds="true" rotate="-44.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta3.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo1_recurso4_aresta" fitHeight="206.0" fitWidth="10.0" layoutX="175.0" layoutY="35.0" pickOnBounds="true" rotate="-55.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta4.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo1_recurso5_aresta" fitHeight="266.0" fitWidth="10.0" layoutX="210.0" layoutY="5.0" pickOnBounds="true" rotate="-62.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta5.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo1_recurso6_aresta" fitHeight="319.0" fitWidth="10.0" layoutX="235.0" layoutY="-20.0" pickOnBounds="true" rotate="-68.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta6.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo1_recurso7_aresta" fitHeight="380.0" fitWidth="10.0" layoutX="265.0" layoutY="-50.0" pickOnBounds="true" rotate="-70.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta7.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo1_recurso8_aresta" fitHeight="439.0" fitWidth="10.0" layoutX="295.0" layoutY="-80.0" pickOnBounds="true" rotate="-73.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta8.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo1_recurso9_aresta" fitHeight="490.0" fitWidth="10.0" layoutX="320.0" layoutY="-105.0" pickOnBounds="true" rotate="-75.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta9.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo1_recurso10_aresta" fitHeight="540.0" fitWidth="10.0" layoutX="345.0" layoutY="-130.0" pickOnBounds="true" rotate="-76.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta10.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo2_recurso1_aresta" fitHeight="128.0" fitWidth="10.0" layoutX="122.0" layoutY="75.0" pickOnBounds="true" rotate="25.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo2_recurso2_aresta" fitHeight="120.0" fitWidth="10.0" layoutX="150.0" layoutY="78.0" pickOnBounds="true" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta2.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo2_recurso3_aresta" fitHeight="128.0" fitWidth="10.0" layoutX="177.0" layoutY="74.0" pickOnBounds="true" rotate="-25.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta3.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo2_recurso4_aresta" fitHeight="165.0" fitWidth="10.0" layoutX="205.0" layoutY="55.0" pickOnBounds="true" rotate="-44.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta4.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo2_recurso5_aresta" fitHeight="206.0" fitWidth="10.0" layoutX="235.0" layoutY="35.0" pickOnBounds="true" rotate="-55.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta5.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo2_recurso6_aresta" fitHeight="266.0" fitWidth="10.0" layoutX="270.0" layoutY="5.0" pickOnBounds="true" rotate="-62.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta6.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo2_recurso7_aresta" fitHeight="319.0" fitWidth="10.0" layoutX="295.0" layoutY="-20.0" pickOnBounds="true" rotate="-68.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta7.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo2_recurso8_aresta" fitHeight="380.0" fitWidth="10.0" layoutX="325.0" layoutY="-50.0" pickOnBounds="true" rotate="-70.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta8.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo2_recurso10_aresta" fitHeight="490.0" fitWidth="10.0" layoutX="380.0" layoutY="-105.0" pickOnBounds="true" rotate="-75.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta10.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo2_recurso9_aresta" fitHeight="439.0" fitWidth="10.0" layoutX="355.0" layoutY="-80.0" pickOnBounds="true" rotate="-73.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta9.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo3_recurso1_aresta" fitHeight="145.0" fitWidth="10.0" layoutX="150.0" layoutY="65.0" pickOnBounds="true" rotate="35.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo3_recurso2_aresta" fitHeight="128.0" fitWidth="10.0" layoutX="182.0" layoutY="75.0" pickOnBounds="true" rotate="22.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta2.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo3_recurso3_aresta" fitHeight="120.0" fitWidth="10.0" layoutX="210.0" layoutY="78.0" pickOnBounds="true" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta3.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo3_recurso4_aresta" fitHeight="128.0" fitWidth="10.0" layoutX="237.0" layoutY="74.0" pickOnBounds="true" rotate="-25.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta4.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo3_recurso5_aresta" fitHeight="165.0" fitWidth="10.0" layoutX="265.0" layoutY="55.0" pickOnBounds="true" rotate="-44.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta5.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo3_recurso6_aresta" fitHeight="206.0" fitWidth="10.0" layoutX="295.0" layoutY="35.0" pickOnBounds="true" rotate="-55.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta6.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo3_recurso7_aresta" fitHeight="266.0" fitWidth="10.0" layoutX="330.0" layoutY="5.0" pickOnBounds="true" rotate="-62.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta7.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo3_recurso8_aresta" fitHeight="319.0" fitWidth="10.0" layoutX="355.0" layoutY="-20.0" pickOnBounds="true" rotate="-68.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta8.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo3_recurso9_aresta" fitHeight="380.0" fitWidth="10.0" layoutX="385.0" layoutY="-50.0" pickOnBounds="true" rotate="-70.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta9.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo3_recurso10_aresta" fitHeight="439.0" fitWidth="10.0" layoutX="415.0" layoutY="-80.0" pickOnBounds="true" rotate="-73.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta10.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo4_recurso1_aresta" fitHeight="180.0" fitWidth="10.0" layoutX="180.0" layoutY="50.0" pickOnBounds="true" rotate="50.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo4_recurso2_aresta" fitHeight="145.0" fitWidth="10.0" layoutX="210.0" layoutY="65.0" pickOnBounds="true" rotate="35.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta2.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo4_recurso3_aresta" fitHeight="128.0" fitWidth="10.0" layoutX="242.0" layoutY="72.0" pickOnBounds="true" rotate="22.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta3.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo4_recurso4_aresta" fitHeight="120.0" fitWidth="10.0" layoutX="270.0" layoutY="78.0" pickOnBounds="true" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta4.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo4_recurso5_aresta" fitHeight="128.0" fitWidth="10.0" layoutX="297.0" layoutY="74.0" pickOnBounds="true" rotate="-25.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta5.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo4_recurso6_aresta" fitHeight="165.0" fitWidth="10.0" layoutX="325.0" layoutY="55.0" pickOnBounds="true" rotate="-44.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta6.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo4_recurso7_aresta" fitHeight="206.0" fitWidth="10.0" layoutX="355.0" layoutY="35.0" pickOnBounds="true" rotate="-55.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta7.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo4_recurso8_aresta" fitHeight="266.0" fitWidth="10.0" layoutX="390.0" layoutY="5.0" pickOnBounds="true" rotate="-62.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta8.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo4_recurso9_aresta" fitHeight="319.0" fitWidth="10.0" layoutX="415.0" layoutY="-20.0" pickOnBounds="true" rotate="-68.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta9.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo4_recurso10_aresta" fitHeight="380.0" fitWidth="10.0" layoutX="445.0" layoutY="-50.0" pickOnBounds="true" rotate="-70.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta10.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo5_recurso1_aresta" fitHeight="250.0" fitWidth="10.0" layoutX="200.0" layoutY="10.0" pickOnBounds="true" rotate="58.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo5_recurso2_aresta" fitHeight="180.0" fitWidth="10.0" layoutX="240.0" layoutY="50.0" pickOnBounds="true" rotate="50.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta2.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo5_recurso3_aresta" fitHeight="145.0" fitWidth="10.0" layoutX="270.0" layoutY="65.0" pickOnBounds="true" rotate="35.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta3.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo5_recurso4_aresta" fitHeight="128.0" fitWidth="10.0" layoutX="302.0" layoutY="72.0" pickOnBounds="true" rotate="22.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta4.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo5_recurso5_aresta" fitHeight="120.0" fitWidth="10.0" layoutX="330.0" layoutY="78.0" pickOnBounds="true" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta5.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo5_recurso6_aresta" fitHeight="128.0" fitWidth="10.0" layoutX="357.0" layoutY="74.0" pickOnBounds="true" rotate="-25.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta6.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo5_recurso7_aresta" fitHeight="165.0" fitWidth="10.0" layoutX="385.0" layoutY="55.0" pickOnBounds="true" rotate="-44.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta7.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo5_recurso8_aresta" fitHeight="206.0" fitWidth="10.0" layoutX="415.0" layoutY="35.0" pickOnBounds="true" rotate="-55.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta8.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo5_recurso9_aresta" fitHeight="266.0" fitWidth="10.0" layoutX="450.0" layoutY="5.0" pickOnBounds="true" rotate="-62.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta9.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="processo5_recurso10_aresta" fitHeight="319.0" fitWidth="10.0" layoutX="475.0" layoutY="-20.0" pickOnBounds="true" rotate="-68.0" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/seta10.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane layoutY="287.0" prefHeight="110.0" prefWidth="744.0">
+                                 <children>
+                                    <ImageView fx:id="loki_icon" fitHeight="110.0" fitWidth="150.0" layoutX="2.0" pickOnBounds="true">
+                                       <image>
+                                          <Image url="@../../Fontes/Imagens/Faces/beemo0.png" />
+                                       </image></ImageView>
+                                    <ImageView fitHeight="110.0" fitWidth="600.0" layoutX="152.0" pickOnBounds="true">
+                                       <image>
+                                          <Image url="@../../Fontes/Imagens/text_bar.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="dialogo_info" alignment="TOP_LEFT" contentDisplay="TEXT_ONLY" layoutX="155.0" layoutY="9.0" prefHeight="93.0" prefWidth="582.0" textAlignment="JUSTIFY" wrapText="true" />
+                                    <Button fx:id="proximo" layoutX="685.0" layoutY="77.0" mnemonicParsing="false" onAction="#Passar_Passo_Tutorial" text="Próximo">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button fx:id="anterior" disable="true" layoutX="624.0" layoutY="77.0" mnemonicParsing="false" onAction="#Voltar_Passo_Tutorial" text="Anterior" visible="false">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button fx:id="pular" layoutX="632.0" layoutY="77.0" mnemonicParsing="false" onAction="#Pular_Tutorial" text="Pular">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="novo_processo_window" disable="true" layoutX="150.0" prefHeight="380.0" prefWidth="600.0" visible="false">
+                                 <children>
+                                    <ImageView fitHeight="380.0" fitWidth="600.0" pickOnBounds="true" smooth="false">
+                                       <image>
+                                          <Image url="@../../Fontes/Imagens/gerenciador_processos.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button fx:id="gerenciador_processosx" contentDisplay="GRAPHIC_ONLY" layoutX="553.0" layoutY="8.0" mnemonicParsing="false" onAction="#Fechar_Gerenciador_Processos" prefHeight="20.0" prefWidth="30.0" text="Button">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Label layoutX="22.0" layoutY="50.0" prefHeight="35.0" prefWidth="479.0" text="Especifique o processo a ser adicionado" textFill="#2b971d">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="22.0" layoutY="88.0" text="Id:" textFill="#2b971d">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="23.0" layoutY="128.0" text="Nome:" textFill="#2b971d">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="23.0" layoutY="170.0" text="Ícone:" textFill="#2b971d">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="processo_id" layoutX="75.0" layoutY="86.0" onKeyTyped="#Desmarcar_Processo_id" opacity="0.7" prefHeight="25.0" prefWidth="80.0" text="1" />
+                                    <TextField fx:id="processo_nome" layoutX="75.0" layoutY="126.0" onKeyTyped="#Desmarcar_Processo_nome" opacity="0.7" prefHeight="25.0" prefWidth="208.0" />
+                                    <ListView fx:id="processo_imagem" fixedCellSize="60.0" layoutX="75.0" layoutY="170.0" opacity="0.7" prefHeight="183.0" prefWidth="255.0" />
+                                    <Button fx:id="confirmar_processo" contentDisplay="GRAPHIC_ONLY" layoutX="521.0" layoutY="245.0" mnemonicParsing="false" onAction="#Confirmar_Novo_Processo" prefHeight="50.0" prefWidth="50.0" text="Button">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Label layoutX="341.0" layoutY="88.0" onKeyTyped="#Desmarcar_Processo_ts" text="Tempo de Solicitação: " textFill="#2b971d">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="341.0" layoutY="128.0" onKeyTyped="#Desmarcar_Processo_tu" text="Tempo de Utilização: " textFill="#2b971d">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="processo_ts" layoutX="489.0" layoutY="86.0" onKeyTyped="#Desmarcar_Processo_ts" opacity="0.7" prefHeight="25.0" prefWidth="80.0" />
+                                    <TextField fx:id="processo_tu" layoutX="489.0" layoutY="126.0" onKeyTyped="#Desmarcar_Processo_tu" opacity="0.7" prefHeight="25.0" prefWidth="80.0" />
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="CLOSED_HAND" />
+                                 </cursor>
+                              </Pane>
+                              <ImageView fx:id="mic" fitHeight="50.0" fitWidth="50.0" layoutX="337.0" layoutY="175.0" onMouseClicked="#Clicou_Microfone" pickOnBounds="true" visible="false">
+                                 <image>
+                                    <Image url="@../../Fontes/Imagens/mic.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                     </content></Tab>
+                  <Tab fx:id="tab_detalhes" onSelectionChanged="#Abrir_Tab_Detalhes" text="Detalhes">
+                     <content>
+                        <VBox>
+                           <children>
+                              <ScrollPane fx:id="detalhes_scroll_pane" pannable="true" prefHeight="399.0" prefWidth="752.0" vbarPolicy="ALWAYS" vmax="20.0">
+                                <content>
+                                    <Group fx:id="detalhes_group" translateX="15.0">
+                                       <children>
+                                          <Pane fx:id="processo1_pane" layoutX="22.0" layoutY="9.0" prefHeight="110.0" prefWidth="680.0" visible="false">
+                                             <children>
+                                                <ImageView fx:id="p1_pane" fitHeight="125.0" fitWidth="707.0" layoutX="-15.0" layoutY="-9.0" pickOnBounds="true">
+                                                   <image>
+                                                      <Image url="@../../Fontes/Imagens/pane.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="processo1" fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="21.0" pickOnBounds="true" />
+                                                <Label fx:id="processo1_status" layoutX="20.0" layoutY="78.0" prefHeight="17.0" prefWidth="119.0" text="STATUS: " />
+                                                <Label layoutX="20.0" layoutY="90.0" text="Nome: " />
+                                                <Label fx:id="processo1_nome" layoutX="60.0" layoutY="90.0" prefHeight="17.0" prefWidth="104.0" textFill="BLUE" />
+                                                <Label layoutX="175.0" layoutY="90.0" text="Id: " />
+                                                <Label fx:id="processo1_id" layoutX="191.0" layoutY="90.0" prefHeight="17.0" prefWidth="62.0" textFill="BLUE" />
+                                                <Label layoutX="269.0" layoutY="90.0" prefHeight="17.0" prefWidth="120.0" text="Tempo de solicitação: " />
+                                                <Label fx:id="processo1_ts" layoutX="389.0" layoutY="90.0" prefHeight="17.0" prefWidth="59.0" textFill="BLUE" />
+                                                <Label layoutX="465.0" layoutY="90.0" prefHeight="17.0" prefWidth="80.0" text="Tempo de uso:" />
+                                                <Label fx:id="processo1_tu" layoutX="553.0" layoutY="90.0" prefHeight="17.0" prefWidth="80.0" textFill="BLUE" />
+                                                <ImageView fx:id="processo1_recurso1" fitHeight="50.0" fitWidth="50.0" layoutX="70.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo1_recurso2" fitHeight="50.0" fitWidth="50.0" layoutX="130.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo1_recurso3" fitHeight="50.0" fitWidth="50.0" layoutX="190.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo1_recurso4" fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo1_recurso5" fitHeight="50.0" fitWidth="50.0" layoutX="310.0" layoutY="22.0" pickOnBounds="true" />
+                                                <ImageView fx:id="processo1_recurso6" fitHeight="50.0" fitWidth="50.0" layoutX="370.0" layoutY="22.0" pickOnBounds="true" />
+                                                <ImageView fx:id="processo1_recurso7" fitHeight="50.0" fitWidth="50.0" layoutX="430.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo1_recurso8" fitHeight="50.0" fitWidth="50.0" layoutX="490.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo1_recurso9" fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo1_recurso10" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <Label fx:id="processo1_recurso1_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="80.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo1_recurso2_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="140.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo1_recurso3_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo1_recurso4_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="260.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo1_recurso5_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="320.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo1_recurso6_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="380.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo1_recurso7_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="440.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo1_recurso8_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="500.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo1_recurso9_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="560.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo1_recurso10_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="620.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </Pane>
+                                          <Pane fx:id="processo2_pane" layoutX="22.0" layoutY="9.0" prefHeight="110.0" prefWidth="680.0" visible="false">
+                                             <children>
+                                                <ImageView fx:id="p2_pane" fitHeight="125.0" fitWidth="707.0" layoutX="-15.0" layoutY="-9.0" pickOnBounds="true">
+                                                   <image>
+                                                      <Image url="@../../Fontes/Imagens/pane.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="processo2" fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="21.0" pickOnBounds="true" />
+                                                <Label fx:id="processo2_status" layoutX="20.0" layoutY="78.0" prefHeight="17.0" prefWidth="119.0" text="STATUS:" />
+                                                <Label layoutX="20.0" layoutY="90.0" text="Nome: " />
+                                                <Label fx:id="processo2_nome" layoutX="60.0" layoutY="90.0" prefHeight="17.0" prefWidth="104.0" textFill="BLUE" />
+                                                <Label layoutX="175.0" layoutY="90.0" text="Id: " />
+                                                <Label fx:id="processo2_id" layoutX="191.0" layoutY="90.0" prefHeight="17.0" prefWidth="62.0" textFill="BLUE" />
+                                                <Label layoutX="269.0" layoutY="90.0" prefHeight="17.0" prefWidth="120.0" text="Tempo de solicitação: " />
+                                                <Label fx:id="processo2_ts" layoutX="389.0" layoutY="90.0" prefHeight="17.0" prefWidth="59.0" textFill="BLUE" />
+                                                <Label layoutX="465.0" layoutY="90.0" prefHeight="17.0" prefWidth="80.0" text="Tempo de uso:" />
+                                                <Label fx:id="processo2_tu" layoutX="553.0" layoutY="90.0" prefHeight="17.0" prefWidth="80.0" textFill="BLUE" />
+                                                <ImageView fx:id="processo2_recurso1" fitHeight="50.0" fitWidth="50.0" layoutX="70.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo2_recurso2" fitHeight="50.0" fitWidth="50.0" layoutX="130.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo2_recurso3" fitHeight="50.0" fitWidth="50.0" layoutX="190.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo2_recurso4" fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo2_recurso5" fitHeight="50.0" fitWidth="50.0" layoutX="310.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo2_recurso6" fitHeight="50.0" fitWidth="50.0" layoutX="370.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo2_recurso7" fitHeight="50.0" fitWidth="50.0" layoutX="430.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo2_recurso8" fitHeight="50.0" fitWidth="50.0" layoutX="490.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo2_recurso9" fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo2_recurso10" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <Label fx:id="processo2_recurso1_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="80.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo2_recurso2_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="140.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo2_recurso3_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo2_recurso4_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="260.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo2_recurso5_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="320.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo2_recurso6_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="380.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo2_recurso7_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="440.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo2_recurso8_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="500.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo2_recurso9_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="560.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo2_recurso10_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="620.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </Pane>
+                                          <Pane fx:id="processo3_pane" layoutX="22.0" layoutY="9.0" prefHeight="110.0" prefWidth="680.0" visible="false">
+                                             <children>
+                                                <ImageView fx:id="p3_pane" fitHeight="125.0" fitWidth="707.0" layoutX="-15.0" layoutY="-9.0" pickOnBounds="true">
+                                                   <image>
+                                                      <Image url="@../../Fontes/Imagens/pane.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="processo3" fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="21.0" pickOnBounds="true" />
+                                                <Label fx:id="processo3_status" layoutX="20.0" layoutY="78.0" prefHeight="17.0" prefWidth="119.0" text="STATUS:" />
+                                                <Label layoutX="20.0" layoutY="90.0" text="Nome: " />
+                                                <Label fx:id="processo3_nome" layoutX="60.0" layoutY="90.0" prefHeight="17.0" prefWidth="104.0" textFill="BLUE" />
+                                                <Label layoutX="175.0" layoutY="90.0" text="Id: " />
+                                                <Label fx:id="processo3_id" layoutX="191.0" layoutY="90.0" prefHeight="17.0" prefWidth="62.0" textFill="BLUE" />
+                                                <Label layoutX="269.0" layoutY="90.0" prefHeight="17.0" prefWidth="120.0" text="Tempo de solicitação: " />
+                                                <Label fx:id="processo3_ts" layoutX="389.0" layoutY="90.0" prefHeight="17.0" prefWidth="59.0" textFill="BLUE" />
+                                                <Label layoutX="465.0" layoutY="90.0" prefHeight="17.0" prefWidth="80.0" text="Tempo de uso:" />
+                                                <Label fx:id="processo3_tu" layoutX="553.0" layoutY="90.0" prefHeight="17.0" prefWidth="80.0" textFill="BLUE" />
+                                                <ImageView fx:id="processo3_recurso1" fitHeight="50.0" fitWidth="50.0" layoutX="70.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo3_recurso2" fitHeight="50.0" fitWidth="50.0" layoutX="130.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo3_recurso3" fitHeight="50.0" fitWidth="50.0" layoutX="190.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo3_recurso4" fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo3_recurso5" fitHeight="50.0" fitWidth="50.0" layoutX="310.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo3_recurso6" fitHeight="50.0" fitWidth="50.0" layoutX="370.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo3_recurso7" fitHeight="50.0" fitWidth="50.0" layoutX="430.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo3_recurso8" fitHeight="50.0" fitWidth="50.0" layoutX="490.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo3_recurso9" fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo3_recurso10" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <Label fx:id="processo3_recurso1_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="80.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo3_recurso2_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="140.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo3_recurso3_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo3_recurso4_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="260.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo3_recurso5_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="320.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo3_recurso6_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="380.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo3_recurso7_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="440.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo3_recurso8_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="500.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo3_recurso9_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="560.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo3_recurso10_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="620.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </Pane>
+                                          <Pane fx:id="processo4_pane" layoutX="22.0" layoutY="9.0" prefHeight="110.0" prefWidth="680.0" visible="false">
+                                             <children>
+                                                <ImageView fx:id="p4_pane" fitHeight="125.0" fitWidth="707.0" layoutX="-15.0" layoutY="-9.0" pickOnBounds="true">
+                                                   <image>
+                                                      <Image url="@../../Fontes/Imagens/pane.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="processo4" fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="21.0" pickOnBounds="true" />
+                                                <Label fx:id="processo4_status" layoutX="20.0" layoutY="78.0" prefHeight="17.0" prefWidth="119.0" text="STATUS: " />
+                                                <Label layoutX="20.0" layoutY="90.0" text="Nome: " />
+                                                <Label fx:id="processo4_nome" layoutX="60.0" layoutY="90.0" prefHeight="17.0" prefWidth="104.0" textFill="BLUE" />
+                                                <Label layoutX="175.0" layoutY="90.0" text="Id: " />
+                                                <Label fx:id="processo4_id" layoutX="191.0" layoutY="90.0" prefHeight="17.0" prefWidth="62.0" textFill="BLUE" />
+                                                <Label layoutX="269.0" layoutY="90.0" prefHeight="17.0" prefWidth="120.0" text="Tempo de solicitação: " />
+                                                <Label fx:id="processo4_ts" layoutX="389.0" layoutY="90.0" prefHeight="17.0" prefWidth="59.0" textFill="BLUE" />
+                                                <Label layoutX="465.0" layoutY="90.0" prefHeight="17.0" prefWidth="80.0" text="Tempo de uso:" />
+                                                <Label fx:id="processo4_tu" layoutX="553.0" layoutY="90.0" prefHeight="17.0" prefWidth="80.0" textFill="BLUE" />
+                                                <ImageView fx:id="processo4_recurso1" fitHeight="50.0" fitWidth="50.0" layoutX="70.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo4_recurso2" fitHeight="50.0" fitWidth="50.0" layoutX="130.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo4_recurso3" fitHeight="50.0" fitWidth="50.0" layoutX="190.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo4_recurso4" fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo4_recurso5" fitHeight="50.0" fitWidth="50.0" layoutX="310.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo4_recurso6" fitHeight="50.0" fitWidth="50.0" layoutX="370.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo4_recurso7" fitHeight="50.0" fitWidth="50.0" layoutX="430.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo4_recurso8" fitHeight="50.0" fitWidth="50.0" layoutX="490.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo4_recurso9" fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo4_recurso10" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <Label fx:id="processo4_recurso1_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="80.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo4_recurso2_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="140.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo4_recurso3_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo4_recurso4_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="260.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo4_recurso5_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="320.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo4_recurso6_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="380.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo4_recurso7_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="440.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo4_recurso8_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="500.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo4_recurso9_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="560.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo4_recurso10_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="620.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </Pane>
+                                          <Pane fx:id="processo5_pane" layoutX="22.0" layoutY="9.0" prefHeight="110.0" prefWidth="680.0" visible="false">
+                                             <children>
+                                                <ImageView fx:id="p5_pane" fitHeight="125.0" fitWidth="707.0" layoutX="-15.0" layoutY="-9.0" pickOnBounds="true">
+                                                   <image>
+                                                      <Image url="@../../Fontes/Imagens/pane.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="processo5" fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="21.0" pickOnBounds="true" />
+                                                <Label fx:id="processo5_status" layoutX="20.0" layoutY="78.0" prefHeight="17.0" prefWidth="119.0" text="STATUS: " />
+                                                <Label layoutX="20.0" layoutY="90.0" text="Nome: " />
+                                                <Label fx:id="processo5_nome" layoutX="60.0" layoutY="90.0" prefHeight="17.0" prefWidth="104.0" textFill="BLUE" />
+                                                <Label layoutX="175.0" layoutY="90.0" text="Id: " />
+                                                <Label fx:id="processo5_id" layoutX="191.0" layoutY="90.0" prefHeight="17.0" prefWidth="62.0" textFill="BLUE" />
+                                                <Label layoutX="269.0" layoutY="90.0" prefHeight="17.0" prefWidth="120.0" text="Tempo de solicitação: " />
+                                                <Label fx:id="processo5_ts" layoutX="389.0" layoutY="90.0" prefHeight="17.0" prefWidth="59.0" textFill="BLUE" />
+                                                <Label layoutX="465.0" layoutY="90.0" prefHeight="17.0" prefWidth="80.0" text="Tempo de uso:" />
+                                                <Label fx:id="processo5_tu" layoutX="553.0" layoutY="90.0" prefHeight="17.0" prefWidth="80.0" textFill="BLUE" />
+                                                <ImageView fx:id="processo5_recurso1" fitHeight="50.0" fitWidth="50.0" layoutX="70.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo5_recurso2" fitHeight="50.0" fitWidth="50.0" layoutX="130.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo5_recurso3" fitHeight="50.0" fitWidth="50.0" layoutX="190.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo5_recurso4" fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo5_recurso5" fitHeight="50.0" fitWidth="50.0" layoutX="310.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo5_recurso6" fitHeight="50.0" fitWidth="50.0" layoutX="370.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo5_recurso7" fitHeight="50.0" fitWidth="50.0" layoutX="430.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo5_recurso8" fitHeight="50.0" fitWidth="50.0" layoutX="490.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo5_recurso9" fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo5_recurso10" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <Label fx:id="processo5_recurso1_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="80.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo5_recurso2_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="140.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo5_recurso3_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo5_recurso4_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="260.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo5_recurso5_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="320.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo5_recurso6_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="380.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo5_recurso7_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="440.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo5_recurso8_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="500.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo5_recurso9_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="560.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo5_recurso10_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="620.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </Pane>
+                                          <Pane fx:id="processo6_pane" layoutX="22.0" layoutY="9.0" prefHeight="110.0" prefWidth="680.0" visible="false">
+                                             <children>
+                                                <ImageView fx:id="p6_pane" fitHeight="125.0" fitWidth="707.0" layoutX="-15.0" layoutY="-9.0" pickOnBounds="true">
+                                                   <image>
+                                                      <Image url="@../../Fontes/Imagens/pane.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="processo6" fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="21.0" pickOnBounds="true" />
+                                                <Label fx:id="processo6_status" layoutX="20.0" layoutY="78.0" prefHeight="17.0" prefWidth="119.0" text="STATUS: " />
+                                                <Label layoutX="20.0" layoutY="90.0" text="Nome: " />
+                                                <Label fx:id="processo6_nome" layoutX="60.0" layoutY="90.0" prefHeight="17.0" prefWidth="104.0" textFill="BLUE" />
+                                                <Label layoutX="175.0" layoutY="90.0" text="Id: " />
+                                                <Label fx:id="processo6_id" layoutX="191.0" layoutY="90.0" prefHeight="17.0" prefWidth="62.0" textFill="BLUE" />
+                                                <Label layoutX="269.0" layoutY="90.0" prefHeight="17.0" prefWidth="120.0" text="Tempo de solicitação: " />
+                                                <Label fx:id="processo6_ts" layoutX="389.0" layoutY="90.0" prefHeight="17.0" prefWidth="59.0" textFill="BLUE" />
+                                                <Label layoutX="465.0" layoutY="90.0" prefHeight="17.0" prefWidth="80.0" text="Tempo de uso:" />
+                                                <Label fx:id="processo6_tu" layoutX="553.0" layoutY="90.0" prefHeight="17.0" prefWidth="80.0" textFill="BLUE" />
+                                                <ImageView fx:id="processo6_recurso1" fitHeight="50.0" fitWidth="50.0" layoutX="70.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo6_recurso2" fitHeight="50.0" fitWidth="50.0" layoutX="130.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo6_recurso3" fitHeight="50.0" fitWidth="50.0" layoutX="190.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo6_recurso4" fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo6_recurso5" fitHeight="50.0" fitWidth="50.0" layoutX="310.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo6_recurso6" fitHeight="50.0" fitWidth="50.0" layoutX="370.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo6_recurso7" fitHeight="50.0" fitWidth="50.0" layoutX="430.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo6_recurso8" fitHeight="50.0" fitWidth="50.0" layoutX="490.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo6_recurso9" fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo6_recurso10" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <Label fx:id="processo6_recurso1_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="80.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo6_recurso2_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="140.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo6_recurso3_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo6_recurso4_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="260.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo6_recurso5_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="320.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo6_recurso6_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="380.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo6_recurso7_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="440.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo6_recurso8_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="500.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo6_recurso9_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="560.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo6_recurso10_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="620.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </Pane>
+                                          <Pane fx:id="processo7_pane" layoutX="22.0" layoutY="9.0" prefHeight="110.0" prefWidth="680.0" visible="false">
+                                             <children>
+                                                <ImageView fx:id="p7_pane" fitHeight="125.0" fitWidth="707.0" layoutX="-15.0" layoutY="-9.0" pickOnBounds="true">
+                                                   <image>
+                                                      <Image url="@../../Fontes/Imagens/pane.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="processo7" fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="21.0" pickOnBounds="true" />
+                                                <Label fx:id="processo7_status" layoutX="20.0" layoutY="78.0" prefHeight="17.0" prefWidth="119.0" text="STATUS:" />
+                                                <Label layoutX="20.0" layoutY="90.0" text="Nome: " />
+                                                <Label fx:id="processo7_nome" layoutX="60.0" layoutY="90.0" prefHeight="17.0" prefWidth="104.0" textFill="BLUE" />
+                                                <Label layoutX="175.0" layoutY="90.0" text="Id: " />
+                                                <Label fx:id="processo7_id" layoutX="191.0" layoutY="90.0" prefHeight="17.0" prefWidth="62.0" textFill="BLUE" />
+                                                <Label layoutX="269.0" layoutY="90.0" prefHeight="17.0" prefWidth="120.0" text="Tempo de solicitação: " />
+                                                <Label fx:id="processo7_ts" layoutX="389.0" layoutY="90.0" prefHeight="17.0" prefWidth="59.0" textFill="BLUE" />
+                                                <Label layoutX="465.0" layoutY="90.0" prefHeight="17.0" prefWidth="80.0" text="Tempo de uso:" />
+                                                <Label fx:id="processo7_tu" layoutX="553.0" layoutY="90.0" prefHeight="17.0" prefWidth="80.0" textFill="BLUE" />
+                                                <ImageView fx:id="processo7_recurso1" fitHeight="50.0" fitWidth="50.0" layoutX="70.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo7_recurso2" fitHeight="50.0" fitWidth="50.0" layoutX="130.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo7_recurso3" fitHeight="50.0" fitWidth="50.0" layoutX="190.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo7_recurso4" fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo7_recurso5" fitHeight="50.0" fitWidth="50.0" layoutX="310.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo7_recurso6" fitHeight="50.0" fitWidth="50.0" layoutX="370.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo7_recurso7" fitHeight="50.0" fitWidth="50.0" layoutX="430.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo7_recurso8" fitHeight="50.0" fitWidth="50.0" layoutX="490.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo7_recurso9" fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo7_recurso10" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <Label fx:id="processo7_recurso1_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="80.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo7_recurso2_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="140.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo7_recurso3_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo7_recurso4_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="260.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo7_recurso5_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="320.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo7_recurso6_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="380.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo7_recurso7_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="440.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo7_recurso8_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="500.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo7_recurso9_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="560.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo7_recurso10_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="620.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </Pane>
+                                          <Pane fx:id="processo8_pane" layoutX="22.0" layoutY="9.0" prefHeight="110.0" prefWidth="680.0" visible="false">
+                                             <children>
+                                                <ImageView fx:id="p8_pane" fitHeight="125.0" fitWidth="707.0" layoutX="-15.0" layoutY="-9.0" pickOnBounds="true">
+                                                   <image>
+                                                      <Image url="@../../Fontes/Imagens/pane.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="processo8" fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="21.0" pickOnBounds="true" />
+                                                <Label fx:id="processo8_status" layoutX="20.0" layoutY="78.0" prefHeight="17.0" prefWidth="119.0" text="STATUS:" />
+                                                <Label layoutX="20.0" layoutY="90.0" text="Nome: " />
+                                                <Label fx:id="processo8_nome" layoutX="60.0" layoutY="90.0" prefHeight="17.0" prefWidth="104.0" textFill="BLUE" />
+                                                <Label layoutX="175.0" layoutY="90.0" text="Id: " />
+                                                <Label fx:id="processo8_id" layoutX="191.0" layoutY="90.0" prefHeight="17.0" prefWidth="62.0" textFill="BLUE" />
+                                                <Label layoutX="269.0" layoutY="90.0" prefHeight="17.0" prefWidth="120.0" text="Tempo de solicitação: " />
+                                                <Label fx:id="processo8_ts" layoutX="389.0" layoutY="90.0" prefHeight="17.0" prefWidth="59.0" textFill="BLUE" />
+                                                <Label layoutX="465.0" layoutY="90.0" prefHeight="17.0" prefWidth="80.0" text="Tempo de uso:" />
+                                                <Label fx:id="processo8_tu" layoutX="553.0" layoutY="90.0" prefHeight="17.0" prefWidth="80.0" textFill="BLUE" />
+                                                <ImageView fx:id="processo8_recurso1" fitHeight="50.0" fitWidth="50.0" layoutX="70.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo8_recurso2" fitHeight="50.0" fitWidth="50.0" layoutX="130.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo8_recurso3" fitHeight="50.0" fitWidth="50.0" layoutX="190.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo8_recurso4" fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo8_recurso5" fitHeight="50.0" fitWidth="50.0" layoutX="310.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo8_recurso6" fitHeight="50.0" fitWidth="50.0" layoutX="370.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo8_recurso7" fitHeight="50.0" fitWidth="50.0" layoutX="430.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo8_recurso8" fitHeight="50.0" fitWidth="50.0" layoutX="490.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo8_recurso9" fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo8_recurso10" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <Label fx:id="processo8_recurso1_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="80.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo8_recurso2_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="140.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo8_recurso3_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo8_recurso4_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="260.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo8_recurso5_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="320.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo8_recurso6_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="380.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo8_recurso7_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="440.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo8_recurso8_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="500.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo8_recurso9_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="560.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo8_recurso10_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="620.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </Pane>
+                                          <Pane fx:id="processo9_pane" layoutX="22.0" layoutY="9.0" prefHeight="110.0" prefWidth="680.0" visible="false">
+                                             <children>
+                                                <ImageView fx:id="p9_pane" fitHeight="125.0" fitWidth="707.0" layoutX="-15.0" layoutY="-9.0" pickOnBounds="true">
+                                                   <image>
+                                                      <Image url="@../../Fontes/Imagens/pane.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="processo9" fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="21.0" pickOnBounds="true" />
+                                                <Label fx:id="processo9_status" layoutX="20.0" layoutY="78.0" prefHeight="17.0" prefWidth="119.0" text="STATUS:" />
+                                                <Label layoutX="20.0" layoutY="90.0" text="Nome: " />
+                                                <Label fx:id="processo9_nome" layoutX="60.0" layoutY="90.0" prefHeight="17.0" prefWidth="104.0" textFill="BLUE" />
+                                                <Label layoutX="175.0" layoutY="90.0" text="Id: " />
+                                                <Label fx:id="processo9_id" layoutX="191.0" layoutY="90.0" prefHeight="17.0" prefWidth="62.0" textFill="BLUE" />
+                                                <Label layoutX="269.0" layoutY="90.0" prefHeight="17.0" prefWidth="120.0" text="Tempo de solicitação: " />
+                                                <Label fx:id="processo9_ts" layoutX="389.0" layoutY="90.0" prefHeight="17.0" prefWidth="59.0" textFill="BLUE" />
+                                                <Label layoutX="465.0" layoutY="90.0" prefHeight="17.0" prefWidth="80.0" text="Tempo de uso:" />
+                                                <Label fx:id="processo9_tu" layoutX="553.0" layoutY="90.0" prefHeight="17.0" prefWidth="80.0" textFill="BLUE" />
+                                                <ImageView fx:id="processo9_recurso1" fitHeight="50.0" fitWidth="50.0" layoutX="70.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo9_recurso2" fitHeight="50.0" fitWidth="50.0" layoutX="130.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo9_recurso3" fitHeight="50.0" fitWidth="50.0" layoutX="190.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo9_recurso4" fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo9_recurso5" fitHeight="50.0" fitWidth="50.0" layoutX="310.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo9_recurso6" fitHeight="50.0" fitWidth="50.0" layoutX="370.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo9_recurso7" fitHeight="50.0" fitWidth="50.0" layoutX="430.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo9_recurso8" fitHeight="50.0" fitWidth="50.0" layoutX="490.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo9_recurso9" fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo9_recurso10" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <Label fx:id="processo9_recurso1_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="80.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo9_recurso2_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="140.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo9_recurso3_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo9_recurso4_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="260.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo9_recurso5_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="320.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo9_recurso6_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="380.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo9_recurso7_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="440.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo9_recurso8_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="500.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo9_recurso9_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="560.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo9_recurso10_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="620.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </Pane>
+                                          <Pane fx:id="processo10_pane" layoutX="22.0" layoutY="9.0" prefHeight="110.0" prefWidth="680.0" visible="false">
+                                             <children>
+                                                <ImageView fx:id="p10_pane" fitHeight="125.0" fitWidth="707.0" layoutX="-15.0" layoutY="-9.0" pickOnBounds="true">
+                                                   <image>
+                                                      <Image url="@../../Fontes/Imagens/pane.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="processo10" fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="21.0" pickOnBounds="true" />
+                                                <Label fx:id="processo10_status" layoutX="20.0" layoutY="78.0" prefHeight="17.0" prefWidth="119.0" text="STATUS: " />
+                                                <Label layoutX="20.0" layoutY="90.0" text="Nome: " />
+                                                <Label fx:id="processo10_nome" layoutX="60.0" layoutY="90.0" prefHeight="17.0" prefWidth="104.0" textFill="BLUE" />
+                                                <Label layoutX="175.0" layoutY="90.0" text="Id: " />
+                                                <Label fx:id="processo10_id" layoutX="191.0" layoutY="90.0" prefHeight="17.0" prefWidth="62.0" textFill="BLUE" />
+                                                <Label layoutX="269.0" layoutY="90.0" prefHeight="17.0" prefWidth="120.0" text="Tempo de solicitação: " />
+                                                <Label fx:id="processo10_ts" layoutX="389.0" layoutY="90.0" prefHeight="17.0" prefWidth="59.0" textFill="BLUE" />
+                                                <Label layoutX="465.0" layoutY="90.0" prefHeight="17.0" prefWidth="80.0" text="Tempo de uso:" />
+                                                <Label fx:id="processo10_tu" layoutX="553.0" layoutY="90.0" prefHeight="17.0" prefWidth="80.0" textFill="BLUE" />
+                                                <ImageView fx:id="processo10_recurso1" fitHeight="50.0" fitWidth="50.0" layoutX="70.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo10_recurso2" fitHeight="50.0" fitWidth="50.0" layoutX="130.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo10_recurso3" fitHeight="50.0" fitWidth="50.0" layoutX="190.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo10_recurso4" fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo10_recurso5" fitHeight="50.0" fitWidth="50.0" layoutX="310.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo10_recurso6" fitHeight="50.0" fitWidth="50.0" layoutX="370.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo10_recurso7" fitHeight="50.0" fitWidth="50.0" layoutX="430.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo10_recurso8" fitHeight="50.0" fitWidth="50.0" layoutX="490.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo10_recurso9" fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="processo10_recurso10" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                                <Label fx:id="processo10_recurso1_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="80.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo10_recurso2_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="140.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo10_recurso3_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo10_recurso4_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="260.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo10_recurso5_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="320.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo10_recurso6_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="380.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo10_recurso7_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="440.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo10_recurso8_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="500.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo10_recurso9_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="560.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="processo10_recurso10_tu" alignment="CENTER" contentDisplay="CENTER" layoutX="620.0" layoutY="6.0" prefHeight="17.0" prefWidth="32.0">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </Group>
+                                </content>
+                              </ScrollPane>
+                           </children>
+                        </VBox>
+                     </content></Tab>
+                <Tab fx:id="tab_logs" onSelectionChanged="#Abrir_Tab_Logs" text="Logs">
+                     <content>
+                        <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="412.0" prefWidth="753.0" scaleShape="false" translateX="1.0">
+                           <content>
+                              <TextArea fx:id="historico" editable="false" prefHeight="412.0" prefWidth="747.0" />
+                           </content>
+                        </ScrollPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+            <Button fx:id="voltar_menu" contentDisplay="GRAPHIC_ONLY" disable="true" layoutX="698.0" layoutY="4.0" mnemonicParsing="false" onAction="#Voltar_Menu" prefHeight="35.0" prefWidth="35.0" visible="false">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="remover_recurso" disable="true" layoutX="45.0" layoutY="36.0" mnemonicParsing="false" onAction="#Remover_Recurso" onMouseEntered="#Foco_Remover_Recurso" onMouseExited="#Esconder_Remover_Recurso" text="Remover" visible="false">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="notification_pane" layoutX="385.0" layoutY="400.0" prefHeight="60.0" prefWidth="359.0" visible="false">
+         <children>
+            <ImageView fitHeight="60.0" fitWidth="359.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../Fontes/Imagens/notification.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="texto_notificacao" layoutX="14.0" layoutY="22.0" prefHeight="17.0" prefWidth="334.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="gerenciador_window" layoutX="185.0" layoutY="85.0" prefHeight="307.0" prefWidth="534.0" visible="false">
+         <children>
+            <ImageView fitHeight="307.0" fitWidth="534.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@../../Fontes/Imagens/gerenciador.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="gerenciadorx" contentDisplay="GRAPHIC_ONLY" layoutX="488.0" layoutY="5.0" mnemonicParsing="false" onAction="#Fechar_Gerenciador" prefHeight="20.0" prefWidth="30.0" text="Button">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="22.0" layoutY="50.0" prefHeight="35.0" prefWidth="479.0" text="Especifique o recurso a ser adicionado" textFill="#2b971d">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="22.0" layoutY="88.0" text="Id:" textFill="#2b971d">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="23.0" layoutY="128.0" text="Nome:" textFill="#2b971d">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="23.0" layoutY="170.0" text="Ícone:" textFill="#2b971d">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="recurso_id" layoutX="75.0" layoutY="86.0" onKeyTyped="#Desmarcar_Campo_Id" opacity="0.7" prefHeight="25.0" prefWidth="80.0" text="1" />
+            <TextField fx:id="recurso_nome" layoutX="75.0" layoutY="126.0" onKeyTyped="#Desmarcar_Campo_Nome" opacity="0.7" prefHeight="25.0" prefWidth="208.0" />
+            <ListView fx:id="recurso_imagem" fixedCellSize="60.0" layoutX="75.0" layoutY="170.0" opacity="0.7" prefHeight="110.0" prefWidth="208.0" />
+            <Button fx:id="confirmar_recurso" contentDisplay="GRAPHIC_ONLY" layoutX="463.0" layoutY="230.0" mnemonicParsing="false" onAction="#Confirmar_Novo_Recurso" prefHeight="50.0" prefWidth="50.0" text="Button">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label alignment="TOP_LEFT" layoutX="288.0" layoutY="105.0" prefHeight="93.0" prefWidth="232.0" text="Clique com o botão direito do mouse sobre o recurso na área de trabalho para removê-lo." textAlignment="JUSTIFY" textFill="#2b971d" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="configurar_intervalo" layoutX="340.0" layoutY="295.0" prefHeight="93.0" prefWidth="367.0" visible="false">
+         <children>
+            <ImageView fitHeight="93.0" fitWidth="367.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@../../Fontes/Imagens/configuracao.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="8.0" layoutY="10.0" prefHeight="35.0" prefWidth="349.0" text="Determine o intervalo de tempo para detectar deadlocks" textFill="#2b971d">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="8.0" layoutY="47.0" text="Tempo(s): " textFill="#2b971d">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="intervalo_deltat" layoutX="78.0" layoutY="45.0" onKeyTyped="#Desmarcar_Campo_Id" opacity="0.7" prefHeight="25.0" prefWidth="80.0" text="1" />
+            <Button fx:id="confirmar_intervalo" contentDisplay="GRAPHIC_ONLY" layoutX="328.0" layoutY="58.0" mnemonicParsing="false" onAction="#Confirmar_Intervalo" prefHeight="20.0" prefWidth="20.0" text="Button">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="intervalox" contentDisplay="GRAPHIC_ONLY" layoutX="344.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#Fechar_Configuracao_Intervalo" prefHeight="10.0" prefWidth="15.0" text="Button">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Pane>
+   </children>
+</AnchorPane>
